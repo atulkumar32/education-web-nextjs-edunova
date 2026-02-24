@@ -1,0 +1,43 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.sectionPage {
+  width: 100%;
+  min-height: 100vh;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  background: #fdf6e3;
+  position: relative;
+}
+
+.pageInner {
+  width: 100%;
+  min-height: 100vh;
+  padding: $spacing-2xl $spacing-lg;
+  
+  @include tablet {
+    padding: $spacing-3xl $spacing-xl;
+  }
+  
+  @include desktop {
+    padding: $spacing-3xl * 1.5 $spacing-2xl;
+  }
+}
+
+.pageNumber {
+  position: absolute;
+  bottom: $spacing-xl;
+  right: $spacing-xl;
+  font-family: 'Georgia', serif;
+  font-size: $font-size-sm;
+  color: rgba(0, 0, 0, 0.4);
+  font-style: italic;
+  user-select: none;
+  
+  @include desktop {
+    bottom: $spacing-2xl;
+    right: $spacing-2xl;
+    font-size: $font-size-base;
+  }
+}

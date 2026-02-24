@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "slug": "future-of-web-development",
+    "title": "The Future of Web Development in 2024",
+    "excerpt": "Explore the latest trends and technologies shaping the future of web development.",
+    "content": "Full blog content here...",
+    "author": {
+      "name": "Sarah Johnson",
+      "avatar": "/authors/sarah.jpg"
+    },
+    "category": "Web Development",
+    "image": "/blog/web-future.jpg",
+    "date": "2024-01-15",
+    "readTime": "8 min read",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "slug": "machine-learning-beginners",
+    "title": "Machine Learning for Beginners: A Complete Guide",
+    "excerpt": "Start your journey into machine learning with this comprehensive beginner's guide.",
+    "content": "Full blog content here...",
+    "author": {
+      "name": "Michael Chen",
+      "avatar": "/authors/michael.jpg"
+    },
+    "category": "Data Science",
+    "image": "/blog/ml-guide.jpg",
+    "date": "2024-01-12",
+    "readTime": "12 min read",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "slug": "design-principles-2024",
+    "title": "10 Essential Design Principles Every Designer Should Know",
+    "excerpt": "Master these fundamental design principles to create stunning user interfaces.",
+    "content": "Full blog content here...",
+    "author": {
+      "name": "Emma Williams",
+      "avatar": "/authors/emma.jpg"
+    },
+    "category": "Design",
+    "image": "/blog/design-principles.jpg",
+    "date": "2024-01-10",
+    "readTime": "6 min read",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "slug": "react-native-vs-flutter",
+    "title": "React Native vs Flutter: Which Should You Choose?",
+    "excerpt": "A detailed comparison of the two most popular cross-platform mobile frameworks.",
+    "content": "Full blog content here...",
+    "author": {
+      "name": "James Rodriguez",
+      "avatar": "/authors/james.jpg"
+    },
+    "category": "Mobile Development",
+    "image": "/blog/rn-flutter.jpg",
+    "date": "2024-01-08",
+    "readTime": "10 min read",
+    "featured": false
+  }
+]

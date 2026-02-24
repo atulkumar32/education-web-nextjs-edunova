@@ -1,0 +1,14 @@
+@use '@/styles/variables' as *;
+
+.section {
+  padding: $spacing-3xl 0;
+
+  &.gray {
+    background: $gray-50;
+  }
+
+  &.gradient {
+    background: $gradient-primary;
+    color: $white;
+  }
+}

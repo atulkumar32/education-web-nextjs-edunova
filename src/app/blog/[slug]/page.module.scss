@@ -1,0 +1,157 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  padding: $spacing-3xl 0;
+}
+
+.article {
+  max-width: 800px;
+  margin: 0 auto $spacing-3xl;
+}
+
+.header {
+  margin-bottom: $spacing-3xl;
+
+  > span {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.title {
+  font-size: $font-size-5xl;
+  margin-bottom: $spacing-xl;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  color: $gray-600;
+  font-size: $font-size-base;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-full;
+  background: $gray-200;
+  @include flex-center;
+  font-size: 20px;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: $gradient-primary;
+  border-radius: $radius-xl;
+  @include flex-center;
+  font-size: 120px;
+  margin-bottom: $spacing-3xl;
+}
+
+.content {
+  font-size: $font-size-lg;
+  line-height: 1.8;
+  color: $gray-800;
+
+  p {
+    margin-bottom: $spacing-xl;
+  }
+
+  h2 {
+    font-size: $font-size-3xl;
+    margin: $spacing-3xl 0 $spacing-xl;
+  }
+
+  ul {
+    margin: $spacing-xl 0;
+    padding-left: $spacing-2xl;
+
+    li {
+      margin-bottom: $spacing-md;
+    }
+  }
+}
+
+.related {
+  margin-bottom: $spacing-3xl;
+
+  h2 {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-2xl;
+  }
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.relatedCard {
+  background: $white;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: all $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+.relatedImage {
+  width: 100%;
+  padding-top: 56.25%;
+  background: $gradient-primary;
+  @include flex-center;
+  font-size: 48px;
+  position: relative;
+}
+
+.relatedContent {
+  padding: $spacing-xl;
+
+  h3 {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-sm;
+    @include line-clamp(2);
+  }
+
+  p {
+    color: $gray-600;
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-md;
+    @include line-clamp(2);
+  }
+}
+
+.readMore {
+  color: $primary;
+  font-weight: 600;
+  font-size: $font-size-sm;
+}
+
+.backButton {
+  text-align: center;
+}
+
+.notFound {
+  text-align: center;
+  padding: $spacing-3xl;
+  font-size: $font-size-2xl;
+  color: $gray-600;
+}

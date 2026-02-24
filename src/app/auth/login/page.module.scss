@@ -1,0 +1,66 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  @include flex-center;
+  background: $gray-50;
+  padding: $spacing-2xl 0;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: $white;
+  padding: $spacing-3xl;
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-xl;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $spacing-2xl;
+
+  h1 {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    color: $gray-600;
+  }
+}
+
+.form {
+  @include flex-column;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+}
+
+.forgot {
+  text-align: right;
+
+  a {
+    color: $primary;
+    font-size: $font-size-sm;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  color: $gray-600;
+
+  a {
+    color: $primary;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

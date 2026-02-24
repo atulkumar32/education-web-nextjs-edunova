@@ -1,0 +1,263 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.card {
+  background: $white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: all $transition-base;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  @include mobile {
+    border-radius: $radius-md;
+  }
+
+  @include desktop {
+    border-radius: $radius-xl;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+.link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: $gradient-primary;
+  @include flex-center;
+  overflow: hidden;
+
+  > span {
+    position: absolute;
+    top: $spacing-sm;
+    right: $spacing-sm;
+
+    @include desktop {
+      top: $spacing-md;
+      right: $spacing-md;
+    }
+  }
+}
+
+.imagePlaceholder {
+  @include absolute-center;
+  font-size: 60px;
+  opacity: 0.3;
+
+  @include tablet {
+    font-size: 70px;
+  }
+
+  @include desktop {
+    font-size: 80px;
+  }
+}
+
+.content {
+  padding: $spacing-md;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    padding: $spacing-lg;
+  }
+
+  @include desktop {
+    padding: $spacing-xl;
+  }
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-sm;
+  flex-wrap: wrap;
+
+  @include desktop {
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.level {
+  font-size: $font-size-xs;
+  color: $gray-600;
+
+  @include desktop {
+    font-size: $font-size-sm;
+  }
+}
+
+.title {
+  font-size: $font-size-base;
+  font-weight: 700;
+  margin-bottom: $spacing-sm;
+  @include line-clamp(2);
+
+  @include tablet {
+    font-size: $font-size-lg;
+  }
+
+  @include desktop {
+    margin-bottom: $spacing-md;
+  }
+}
+
+.description {
+  color: $gray-600;
+  font-size: $font-size-xs;
+  margin-bottom: $spacing-md;
+  @include line-clamp(2);
+  flex: 1;
+
+  @include tablet {
+    font-size: $font-size-sm;
+  }
+
+  @include desktop {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.instructor {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-sm;
+  font-size: $font-size-xs;
+  color: $gray-700;
+
+  @include tablet {
+    gap: $spacing-sm;
+    font-size: $font-size-sm;
+  }
+
+  @include desktop {
+    margin-bottom: $spacing-md;
+  }
+}
+
+.instructorAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: $radius-full;
+  background: $gray-200;
+  @include flex-center;
+  font-size: 12px;
+  flex-shrink: 0;
+
+  @include desktop {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+
+.stats {
+  display: flex;
+  gap: $spacing-md;
+  font-size: $font-size-xs;
+  color: $gray-600;
+  margin-bottom: $spacing-md;
+
+  @include tablet {
+    font-size: $font-size-sm;
+  }
+
+  @include desktop {
+    gap: $spacing-lg;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.footer {
+  @include flex-between;
+  padding-top: $spacing-sm;
+  border-top: 1px solid $gray-200;
+  gap: $spacing-sm;
+
+  @include desktop {
+    padding-top: $spacing-md;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  flex-shrink: 0;
+}
+
+.stars {
+  font-weight: 600;
+  color: $gray-900;
+  font-size: $font-size-xs;
+
+  @include desktop {
+    font-size: $font-size-sm;
+  }
+}
+
+.reviews {
+  font-size: 10px;
+  color: $gray-500;
+
+  @include desktop {
+    font-size: $font-size-xs;
+  }
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  flex-shrink: 0;
+
+  @include desktop {
+    gap: $spacing-sm;
+  }
+}
+
+.currentPrice {
+  font-size: $font-size-base;
+  font-weight: 800;
+  color: $primary;
+
+  @include desktop {
+    font-size: $font-size-lg;
+  }
+}
+
+.originalPrice {
+  font-size: 10px;
+  color: $gray-500;
+  text-decoration: line-through;
+
+  @include desktop {
+    font-size: $font-size-xs;
+  }
+}
+
+.actions {
+  padding: $spacing-sm $spacing-md $spacing-md;
+
+  @include desktop {
+    padding: $spacing-md $spacing-xl $spacing-xl;
+  }
+}

@@ -1,0 +1,49 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.searchBar {
+  margin-bottom: $spacing-2xl;
+}
+
+.search {
+  margin-bottom: $spacing-lg;
+}
+
+.controls {
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.results {
+  font-size: $font-size-sm;
+  color: $gray-600;
+  font-weight: 600;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+
+  label {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $gray-700;
+  }
+
+  select {
+    padding: $spacing-sm $spacing-md;
+    border: 2px solid $gray-300;
+    border-radius: $radius-md;
+    font-size: $font-size-sm;
+    background: $white;
+    cursor: pointer;
+    transition: border-color $transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+  }
+}

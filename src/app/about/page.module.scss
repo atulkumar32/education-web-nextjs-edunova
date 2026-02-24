@@ -1,0 +1,204 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+}
+
+.hero {
+  background: $gradient-primary;
+  color: $white;
+  padding: $spacing-3xl * 1.5 0;
+  text-align: center;
+}
+
+.title {
+  font-size: $font-size-5xl;
+  margin-bottom: $spacing-lg;
+}
+
+.subtitle {
+  font-size: $font-size-xl;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: $spacing-3xl 0;
+
+  h2 {
+    font-size: $font-size-4xl;
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+  }
+}
+
+.text {
+  font-size: $font-size-lg;
+  line-height: 1.8;
+  color: $gray-700;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.statsSection {
+  padding: $spacing-3xl 0;
+  background: $gray-50;
+  margin: $spacing-3xl 0;
+  border-radius: $radius-2xl;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.statCard {
+  text-align: center;
+  padding: $spacing-2xl;
+}
+
+.statNumber {
+  font-size: $font-size-5xl;
+  font-weight: 800;
+  @include gradient-text;
+  margin-bottom: $spacing-md;
+}
+
+.statLabel {
+  font-size: $font-size-base;
+  color: $gray-600;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: $gradient-primary;
+
+    @include desktop {
+      left: 50%;
+    }
+  }
+}
+
+.timelineItem {
+  display: flex;
+  gap: $spacing-xl;
+  margin-bottom: $spacing-3xl;
+  position: relative;
+
+  @include desktop {
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      text-align: right;
+
+      .timelineYear {
+        left: auto;
+        right: -60px;
+      }
+    }
+  }
+}
+
+.timelineYear {
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  @include flex-center;
+  background: $gradient-primary;
+  color: $white;
+  border-radius: $radius-full;
+  font-size: $font-size-xl;
+  font-weight: 800;
+  box-shadow: $shadow-lg;
+
+  @include desktop {
+    left: calc(50% - 50px);
+  }
+}
+
+.timelineContent {
+  flex: 1;
+  padding: $spacing-xl;
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  margin-left: 120px;
+
+  @include desktop {
+    margin-left: 0;
+    max-width: calc(50% - 80px);
+  }
+
+  h3 {
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $gray-600;
+  }
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.featureCard {
+  text-align: center;
+  padding: $spacing-2xl;
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  transition: all $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl;
+  }
+
+  h3 {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $gray-600;
+  }
+}
+
+.featureIcon {
+  font-size: 64px;
+  margin-bottom: $spacing-lg;
+}

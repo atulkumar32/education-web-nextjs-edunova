@@ -1,0 +1,45 @@
+@use '@/styles/variables' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: $radius-full;
+  white-space: nowrap;
+}
+
+.sm {
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-xs;
+}
+
+.md {
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-sm;
+}
+
+.primary {
+  background: rgba($primary, 0.1);
+  color: $primary;
+}
+
+.secondary {
+  background: rgba($secondary, 0.1);
+  color: $secondary;
+}
+
+.success {
+  background: rgba($success, 0.1);
+  color: $success;
+}
+
+.warning {
+  background: rgba($warning, 0.1);
+  color: $warning;
+}
+
+.error {
+  background: rgba($error, 0.1);
+  color: $error;
+}

@@ -1,0 +1,335 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.hero {
+  background: $gradient-primary;
+  color: $white;
+  padding: $spacing-3xl 0;
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  margin-bottom: $spacing-md;
+
+  @include tablet {
+    font-size: $font-size-4xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-lg;
+  opacity: 0.9;
+
+  @include tablet {
+    font-size: $font-size-xl;
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 0 $spacing-md;
+
+  @include tablet {
+    padding: 0 $spacing-lg;
+  }
+
+  @include desktop {
+    padding: 0 $spacing-xl;
+  }
+
+  @include wide {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.featured {
+  padding: $spacing-2xl 0;
+
+  @include tablet {
+    padding: $spacing-3xl 0;
+  }
+
+  h2 {
+    font-size: $font-size-2xl;
+    margin-bottom: $spacing-xl;
+
+    @include tablet {
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-2xl;
+    }
+  }
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @include tablet {
+    gap: $spacing-2xl;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.featuredCard {
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-lg;
+  transition: all $transition-base;
+  width: 100%;
+
+  @include tablet {
+    border-radius: $radius-xl;
+  }
+
+  @include desktop {
+    flex-direction: row;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-2xl;
+  }
+}
+
+.featuredImage {
+  width: 100%;
+  padding-top: 56.25%;
+  background: $gradient-primary;
+  @include flex-center;
+  font-size: 60px;
+  position: relative;
+
+  @include tablet {
+    font-size: 80px;
+  }
+
+  @include desktop {
+    width: 300px;
+    padding-top: 0;
+    min-height: 250px;
+    flex-shrink: 0;
+  }
+}
+
+.featuredContent {
+  padding: $spacing-lg;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    padding: $spacing-xl;
+  }
+
+  @include desktop {
+    padding: $spacing-2xl;
+  }
+
+  > span {
+    margin-bottom: $spacing-sm;
+
+    @include desktop {
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  h3 {
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-sm;
+
+    @include tablet {
+      font-size: $font-size-2xl;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  p {
+    color: $gray-600;
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-md;
+    @include line-clamp(3);
+    flex: 1;
+
+    @include tablet {
+      font-size: $font-size-base;
+      margin-bottom: $spacing-lg;
+    }
+  }
+}
+
+.allPosts {
+  padding: $spacing-2xl 0;
+
+  @include tablet {
+    padding: $spacing-3xl 0;
+  }
+
+  h2 {
+    font-size: $font-size-2xl;
+    margin-bottom: $spacing-xl;
+
+    @include tablet {
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-2xl;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  width: 100%;
+
+  @include mobile {
+    gap: $spacing-md;
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-xl;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include wide {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: $white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: all $transition-base;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  @include tablet {
+    border-radius: $radius-xl;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+.image {
+  width: 100%;
+  padding-top: 56.25%;
+  background: $gradient-primary;
+  @include flex-center;
+  font-size: 48px;
+  position: relative;
+
+  @include tablet {
+    font-size: 64px;
+  }
+}
+
+.content {
+  padding: $spacing-md;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    padding: $spacing-lg;
+  }
+
+  @include desktop {
+    padding: $spacing-xl;
+  }
+
+  > span {
+    margin-bottom: $spacing-sm;
+
+    @include desktop {
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  h3 {
+    font-size: $font-size-base;
+    margin-bottom: $spacing-sm;
+    @include line-clamp(2);
+
+    @include tablet {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  p {
+    color: $gray-600;
+    font-size: $font-size-xs;
+    margin-bottom: $spacing-md;
+    @include line-clamp(3);
+    flex: 1;
+
+    @include tablet {
+      font-size: $font-size-sm;
+      margin-bottom: $spacing-lg;
+    }
+  }
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-xs;
+  color: $gray-600;
+  flex-wrap: wrap;
+
+  @include tablet {
+    gap: $spacing-sm;
+    font-size: $font-size-sm;
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+
+  @include tablet {
+    gap: $spacing-sm;
+  }
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: $radius-full;
+  background: $gray-200;
+  @include flex-center;
+  font-size: 12px;
+  flex-shrink: 0;
+
+  @include tablet {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}

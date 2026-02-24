@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Web Development",
+    "slug": "web-development",
+    "icon": "💻",
+    "description": "Build modern websites and web applications",
+    "courseCount": 245
+  },
+  {
+    "id": 2,
+    "name": "Data Science",
+    "slug": "data-science",
+    "icon": "📊",
+    "description": "Analyze data and build ML models",
+    "courseCount": 189
+  },
+  {
+    "id": 3,
+    "name": "Design",
+    "slug": "design",
+    "icon": "🎨",
+    "description": "Create beautiful user experiences",
+    "courseCount": 156
+  },
+  {
+    "id": 4,
+    "name": "Mobile Development",
+    "slug": "mobile-development",
+    "icon": "📱",
+    "description": "Build iOS and Android apps",
+    "courseCount": 134
+  },
+  {
+    "id": 5,
+    "name": "Marketing",
+    "slug": "marketing",
+    "icon": "📈",
+    "description": "Grow your business online",
+    "courseCount": 198
+  },
+  {
+    "id": 6,
+    "name": "Cloud Computing",
+    "slug": "cloud-computing",
+    "icon": "☁️",
+    "description": "Master cloud platforms",
+    "courseCount": 112
+  },
+  {
+    "id": 7,
+    "name": "Cybersecurity",
+    "slug": "cybersecurity",
+    "icon": "🔒",
+    "description": "Protect systems and data",
+    "courseCount": 87
+  },
+  {
+    "id": 8,
+    "name": "Business",
+    "slug": "business",
+    "icon": "💼",
+    "description": "Develop business skills",
+    "courseCount": 223
+  }
+]

@@ -1,0 +1,47 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  @include flex-center;
+  padding: $spacing-2xl 0;
+}
+
+.card {
+  text-align: center;
+  background: $white;
+  padding: $spacing-3xl * 2;
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-2xl;
+  max-width: 600px;
+}
+
+.icon {
+  width: 120px;
+  height: 120px;
+  @include flex-center;
+  margin: 0 auto $spacing-2xl;
+  background: $success;
+  color: $white;
+  border-radius: $radius-full;
+  font-size: 80px;
+}
+
+.title {
+  font-size: $font-size-4xl;
+  margin-bottom: $spacing-lg;
+  color: $success;
+}
+
+.description {
+  font-size: $font-size-lg;
+  color: $gray-600;
+  margin-bottom: $spacing-3xl;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-lg;
+  justify-content: center;
+  flex-wrap: wrap;
+}

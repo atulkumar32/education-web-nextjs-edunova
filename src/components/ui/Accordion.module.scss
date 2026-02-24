@@ -1,0 +1,46 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.accordionItem {
+  border: 1px solid $gray-200;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $white;
+}
+
+.accordionHeader {
+  @include reset-button;
+  @include flex-between;
+  width: 100%;
+  padding: $spacing-lg;
+  font-size: $font-size-base;
+  font-weight: 600;
+  text-align: left;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $gray-50;
+  }
+}
+
+.icon {
+  display: inline-block;
+  color: $primary;
+  font-size: $font-size-sm;
+}
+
+.accordionContent {
+  overflow: hidden;
+}
+
+.accordionInner {
+  padding: 0 $spacing-lg $spacing-lg;
+  color: $gray-700;
+  line-height: 1.6;
+}

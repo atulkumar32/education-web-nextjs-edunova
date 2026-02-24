@@ -1,0 +1,71 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.hero {
+  position: relative;
+  min-height: 90vh;
+  @include flex-center;
+  overflow: hidden;
+  background: linear-gradient(135deg, $gray-50 0%, $white 100%);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: $spacing-3xl 0;
+}
+
+.title {
+  font-size: $font-size-5xl;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: $spacing-lg;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subtitle {
+  font-size: $font-size-xl;
+  color: $gray-600;
+  max-width: 700px;
+  margin: 0 auto $spacing-2xl;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-lg;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: $spacing-3xl;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-xl;
+  max-width: 800px;
+  margin: 0 auto;
+
+  @include tablet {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: $font-size-4xl;
+  font-weight: 800;
+  @include gradient-text;
+  margin-bottom: $spacing-sm;
+}
+
+.statLabel {
+  font-size: $font-size-base;
+  color: $gray-600;
+}

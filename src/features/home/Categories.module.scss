@@ -1,0 +1,80 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.section {
+  padding: $spacing-3xl 0;
+  background: $gray-50;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+}
+
+.title {
+  font-size: $font-size-4xl;
+  font-weight: 800;
+  margin-bottom: $spacing-md;
+}
+
+.subtitle {
+  font-size: $font-size-lg;
+  color: $gray-600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: $white;
+  padding: $spacing-2xl;
+  border-radius: $radius-xl;
+  text-align: center;
+  transition: all $transition-base;
+  border: 2px solid transparent;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $primary;
+    box-shadow: $shadow-lg;
+
+    .icon {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.icon {
+  font-size: 48px;
+  margin-bottom: $spacing-lg;
+  transition: transform $transition-base;
+}
+
+.name {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  margin-bottom: $spacing-sm;
+}
+
+.description {
+  color: $gray-600;
+  margin-bottom: $spacing-md;
+  font-size: $font-size-sm;
+}
+
+.count {
+  font-size: $font-size-sm;
+  color: $primary;
+  font-weight: 600;
+}

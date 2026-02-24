@@ -1,0 +1,100 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  padding: $spacing-3xl 0;
+}
+
+.title {
+  font-size: $font-size-4xl;
+  margin-bottom: $spacing-2xl;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-2xl;
+
+  @include desktop {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.formSection {
+  background: $white;
+  padding: $spacing-3xl;
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-lg;
+}
+
+.form {
+  @include flex-column;
+  gap: $spacing-3xl;
+}
+
+.section {
+  h2 {
+    font-size: $font-size-2xl;
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  > div:nth-child(3) {
+    @include tablet {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.summary {
+  background: $white;
+  padding: $spacing-2xl;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+
+  h2 {
+    font-size: $font-size-2xl;
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.items {
+  @include flex-column;
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+  padding-bottom: $spacing-xl;
+  border-bottom: 1px solid $gray-200;
+}
+
+.item {
+  @include flex-between;
+  font-size: $font-size-sm;
+  color: $gray-700;
+}
+
+.summaryRow {
+  @include flex-between;
+  padding: $spacing-md 0;
+  border-bottom: 1px solid $gray-200;
+
+  &.total {
+    font-size: $font-size-xl;
+    font-weight: 800;
+    color: $primary;
+    border-bottom: none;
+    padding-top: $spacing-lg;
+  }
+}

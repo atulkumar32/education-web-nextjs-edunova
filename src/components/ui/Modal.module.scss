@@ -1,0 +1,81 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($black, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: $z-modal-backdrop;
+}
+
+.modalWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  @include flex-center;
+  z-index: $z-modal;
+  padding: $spacing-md;
+  pointer-events: none;
+}
+
+.modal {
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-2xl;
+  max-height: 90vh;
+  overflow-y: auto;
+  pointer-events: all;
+  @include custom-scrollbar;
+
+  &.sm {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &.md {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  &.lg {
+    width: 100%;
+    max-width: 900px;
+  }
+}
+
+.header {
+  @include flex-between;
+  padding: $spacing-xl;
+  border-bottom: 1px solid $gray-200;
+
+  h3 {
+    margin: 0;
+    font-size: $font-size-xl;
+  }
+}
+
+.closeButton {
+  @include reset-button;
+  width: 32px;
+  height: 32px;
+  @include flex-center;
+  border-radius: $radius-md;
+  font-size: 28px;
+  color: $gray-500;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $gray-100;
+    color: $gray-900;
+  }
+}
+
+.content {
+  padding: $spacing-xl;
+}

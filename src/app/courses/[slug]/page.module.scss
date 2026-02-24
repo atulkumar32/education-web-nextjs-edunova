@@ -1,0 +1,209 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+}
+
+.hero {
+  background: $gradient-primary;
+  color: $white;
+  padding: $spacing-3xl 0;
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-2xl;
+
+  @include desktop {
+    grid-template-columns: 1fr 400px;
+  }
+}
+
+.heroLeft {
+  > span {
+    margin-bottom: $spacing-md;
+  }
+}
+
+.title {
+  font-size: $font-size-4xl;
+  margin-bottom: $spacing-lg;
+}
+
+.description {
+  font-size: $font-size-lg;
+  opacity: 0.9;
+  margin-bottom: $spacing-xl;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xl;
+  margin-bottom: $spacing-xl;
+  font-size: $font-size-base;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.stars {
+  font-weight: 700;
+}
+
+.instructor {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.instructorAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: $radius-full;
+  background: rgba($white, 0.2);
+  @include flex-center;
+  font-size: 32px;
+}
+
+.instructorName {
+  font-weight: 700;
+  font-size: $font-size-lg;
+}
+
+.instructorTitle {
+  opacity: 0.8;
+}
+
+.heroRight {
+  @include mobile {
+    display: none;
+  }
+}
+
+.priceCard {
+  background: $white;
+  border-radius: $radius-xl;
+  padding: $spacing-xl;
+  box-shadow: $shadow-2xl;
+  position: sticky;
+  top: 100px;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: $gradient-primary;
+  border-radius: $radius-lg;
+  @include flex-center;
+  font-size: 80px;
+  margin-bottom: $spacing-xl;
+}
+
+.priceInfo {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.currentPrice {
+  font-size: $font-size-4xl;
+  font-weight: 800;
+  color: $gray-900;
+}
+
+.originalPrice {
+  font-size: $font-size-lg;
+  color: $gray-500;
+  text-decoration: line-through;
+  margin-left: $spacing-md;
+}
+
+.discount {
+  color: $success;
+  font-weight: 700;
+  margin-top: $spacing-sm;
+}
+
+.content {
+  padding: $spacing-3xl 0;
+}
+
+.main {
+  max-width: 900px;
+}
+
+.section {
+  margin-bottom: $spacing-3xl;
+
+  h2 {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.learnList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+  list-style: none;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  li {
+    padding: $spacing-md;
+    background: $gray-50;
+    border-radius: $radius-md;
+  }
+}
+
+.lessonList {
+  list-style: none;
+  @include flex-column;
+  gap: $spacing-md;
+
+  li {
+    padding: $spacing-md;
+    border-left: 3px solid $primary;
+    background: $gray-50;
+  }
+}
+
+.instructorCard {
+  display: flex;
+  gap: $spacing-xl;
+  padding: $spacing-2xl;
+  background: $gray-50;
+  border-radius: $radius-xl;
+
+  .instructorAvatar {
+    width: 100px;
+    height: 100px;
+    background: $gradient-primary;
+    color: $white;
+    font-size: 48px;
+  }
+
+  h3 {
+    margin-bottom: $spacing-sm;
+  }
+
+  .instructorTitle {
+    color: $primary;
+    font-weight: 600;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.notFound {
+  text-align: center;
+  padding: $spacing-3xl;
+  font-size: $font-size-2xl;
+  color: $gray-600;
+}

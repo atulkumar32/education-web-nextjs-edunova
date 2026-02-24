@@ -1,0 +1,150 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+}
+
+.hero {
+  background: $gradient-primary;
+  color: $white;
+  padding: $spacing-3xl 0;
+  text-align: center;
+}
+
+.title {
+  font-size: $font-size-4xl;
+  margin-bottom: $spacing-md;
+}
+
+.subtitle {
+  font-size: $font-size-xl;
+  opacity: 0.9;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-3xl;
+  padding: $spacing-3xl 0;
+
+  @include desktop {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.formSection {
+  background: $white;
+  padding: $spacing-3xl;
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-lg;
+}
+
+.form {
+  @include flex-column;
+  gap: $spacing-xl;
+}
+
+.textareaWrapper {
+  @include flex-column;
+  gap: $spacing-sm;
+
+  label {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $gray-700;
+  }
+
+  textarea {
+    padding: $spacing-md;
+    border: 2px solid $gray-300;
+    border-radius: $radius-md;
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    resize: vertical;
+    transition: border-color $transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba($primary, 0.1);
+    }
+  }
+}
+
+.success {
+  text-align: center;
+  padding: $spacing-3xl;
+
+  h2 {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-md;
+    color: $success;
+  }
+
+  p {
+    font-size: $font-size-lg;
+    color: $gray-600;
+  }
+}
+
+.successIcon {
+  width: 100px;
+  height: 100px;
+  @include flex-center;
+  margin: 0 auto $spacing-xl;
+  background: $success;
+  color: $white;
+  border-radius: $radius-full;
+  font-size: 64px;
+}
+
+.infoSection {
+  @include flex-column;
+  gap: $spacing-xl;
+}
+
+.infoCard {
+  background: $white;
+  padding: $spacing-2xl;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  text-align: center;
+
+  h3 {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $gray-600;
+  }
+}
+
+.infoIcon {
+  font-size: 48px;
+  margin-bottom: $spacing-lg;
+}
+
+.developerCard {
+  background: $gradient-primary;
+  color: $white;
+  padding: $spacing-2xl;
+  border-radius: $radius-xl;
+  text-align: center;
+
+  h3 {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    margin-bottom: $spacing-sm;
+  }
+}
+
+.tech {
+  font-size: $font-size-sm;
+  opacity: 0.8;
+  font-weight: 600;
+}

@@ -1,0 +1,121 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.section {
+  padding: $spacing-3xl 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+}
+
+.title {
+  font-size: $font-size-4xl;
+  font-weight: 800;
+  margin-bottom: $spacing-md;
+}
+
+.subtitle {
+  font-size: $font-size-lg;
+  color: $gray-600;
+}
+
+.testimonialWrapper {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xl;
+  max-width: 900px;
+  margin: 0 auto $spacing-2xl;
+}
+
+.navButton {
+  @include reset-button;
+  width: 48px;
+  height: 48px;
+  @include flex-center;
+  background: $white;
+  border: 2px solid $gray-300;
+  border-radius: $radius-full;
+  font-size: 32px;
+  color: $gray-700;
+  transition: all $transition-fast;
+  flex-shrink: 0;
+
+  &:hover {
+    background: $primary;
+    border-color: $primary;
+    color: $white;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.testimonial {
+  background: $white;
+  padding: $spacing-3xl;
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-lg;
+  text-align: center;
+  flex: 1;
+}
+
+.stars {
+  font-size: 24px;
+  margin-bottom: $spacing-lg;
+}
+
+.content {
+  font-size: $font-size-lg;
+  line-height: 1.8;
+  color: $gray-700;
+  margin-bottom: $spacing-2xl;
+  font-style: italic;
+}
+
+.author {
+  @include flex-center;
+  gap: $spacing-md;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: $radius-full;
+  background: $gradient-primary;
+  @include flex-center;
+  font-size: 32px;
+}
+
+.name {
+  font-size: $font-size-lg;
+  font-weight: 700;
+  margin-bottom: $spacing-xs;
+}
+
+.role {
+  font-size: $font-size-sm;
+  color: $gray-600;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-md;
+}
+
+.dot {
+  @include reset-button;
+  width: 12px;
+  height: 12px;
+  border-radius: $radius-full;
+  background: $gray-300;
+  transition: all $transition-fast;
+
+  &.active {
+    background: $primary;
+    width: 32px;
+  }
+}

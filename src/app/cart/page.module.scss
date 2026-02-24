@@ -1,0 +1,160 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  padding: $spacing-3xl 0;
+}
+
+.title {
+  font-size: $font-size-4xl;
+  margin-bottom: $spacing-2xl;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-2xl;
+
+  @include desktop {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.items {
+  @include flex-column;
+  gap: $spacing-lg;
+}
+
+.item {
+  display: flex;
+  gap: $spacing-lg;
+  padding: $spacing-xl;
+  background: $white;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+}
+
+.itemImage {
+  width: 120px;
+  height: 80px;
+  background: $gradient-primary;
+  border-radius: $radius-md;
+  @include flex-center;
+  font-size: 48px;
+  flex-shrink: 0;
+}
+
+.itemInfo {
+  flex: 1;
+
+  h3 {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-sm;
+  }
+}
+
+.itemPrice {
+  font-size: $font-size-xl;
+  font-weight: 800;
+  color: $primary;
+}
+
+.itemActions {
+  @include flex-column;
+  gap: $spacing-md;
+  align-items: flex-end;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  border: 2px solid $gray-300;
+  border-radius: $radius-md;
+  padding: $spacing-sm;
+
+  button {
+    @include reset-button;
+    width: 32px;
+    height: 32px;
+    @include flex-center;
+    background: $gray-100;
+    border-radius: $radius-sm;
+    font-size: 20px;
+    font-weight: 700;
+
+    &:hover {
+      background: $gray-200;
+    }
+  }
+
+  span {
+    min-width: 32px;
+    text-align: center;
+    font-weight: 600;
+  }
+}
+
+.remove {
+  @include reset-button;
+  color: $error;
+  font-size: $font-size-sm;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.summary {
+  background: $white;
+  padding: $spacing-2xl;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+
+  h2 {
+    font-size: $font-size-2xl;
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.summaryRow {
+  @include flex-between;
+  padding: $spacing-md 0;
+  border-bottom: 1px solid $gray-200;
+
+  &.total {
+    font-size: $font-size-xl;
+    font-weight: 800;
+    color: $primary;
+    border-bottom: none;
+    padding-top: $spacing-lg;
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: $spacing-3xl * 2 0;
+
+  h2 {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    color: $gray-600;
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-2xl;
+  }
+}
+
+.emptyIcon {
+  font-size: 120px;
+  margin-bottom: $spacing-xl;
+  opacity: 0.3;
+}
