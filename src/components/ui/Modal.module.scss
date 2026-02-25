@@ -29,9 +29,8 @@
   border-radius: $radius-xl;
   box-shadow: $shadow-2xl;
   max-height: 90vh;
-  overflow-y: auto;
+  overflow: visible;
   pointer-events: all;
-  @include custom-scrollbar;
 
   &.sm {
     width: 100%;
@@ -40,7 +39,7 @@
 
   &.md {
     width: 100%;
-    max-width: 600px;
+    max-width: 550px;
   }
 
   &.lg {

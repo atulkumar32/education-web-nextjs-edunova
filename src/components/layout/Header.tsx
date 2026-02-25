@@ -12,9 +12,14 @@ import styles from './Header.module.scss';
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const pathname = usePathname();
   const cartItems = useAppSelector((state) => state.cart.items);
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,7 +66,9 @@ const Header: React.FC = () => {
         <div className={styles.actions}>
           <Link href="/cart" className={styles.cartButton}>
             🛒
-            {cartItemCount > 0 && <span className={styles.cartBadge}>{cartItemCount}</span>}
+            {isMounted && cartItemCount > 0 && (
+              <span className={styles.cartBadge}>{cartItemCount}</span>
+            )}
           </Link>
 
           {isAuthenticated ? (
