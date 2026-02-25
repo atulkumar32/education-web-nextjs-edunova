@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAppSelector } from '@/store/hooks';
 import Button from '@/components/ui/Button';
+import Logo from '@/components/common/Logo';
 import styles from './Header.module.scss';
 
 const Header: React.FC = () => {
@@ -41,8 +42,8 @@ const Header: React.FC = () => {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
-          EduNova
+        <Link href="/" className={styles.logoLink}>
+          <Logo size="md" />
         </Link>
 
         <nav className={styles.nav}>

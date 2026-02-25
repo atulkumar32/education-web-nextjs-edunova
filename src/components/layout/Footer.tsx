@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Logo from '@/components/common/Logo';
 import styles from './Footer.module.scss';
 
 const Footer: React.FC = () => {
@@ -12,7 +13,7 @@ const Footer: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.column}>
-            <div className={styles.logo}>EduNova</div>
+            <Logo size="lg" />
             <p>
               Empowering learners worldwide with high-quality online education. Transform your
               career with our expert-led courses.

@@ -4,12 +4,13 @@ import React from 'react';
 import Container from '@/components/common/Container';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import Counter from '@/components/animations/Counter';
+import Logo from '@/components/common/Logo';
 import styles from './page.module.scss';
 
 export default function AboutPage() {
   const stats = [
-    { label: 'Students Enrolled', value: 50000, suffix: '+' },
-    { label: 'Expert Instructors', value: 100, suffix: '+' },
+    { label: 'Students Enrolled', value: 500, suffix: '+' },
+    { label: 'Expert Instructors', value: 10, suffix: '+' },
     { label: 'Courses Available', value: 500, suffix: '+' },
     { label: 'Countries Reached', value: 120, suffix: '+' },
   ];
@@ -27,7 +28,10 @@ export default function AboutPage() {
       <div className={styles.hero}>
         <Container>
           <ScrollReveal>
-            <h1 className={styles.title}>About EduNova</h1>
+            <div className={styles.heroTitle}>
+              <span className={styles.aboutText}>About</span>
+              <Logo size="lg" />
+            </div>
             <p className={styles.subtitle}>
               Empowering learners worldwide to achieve their dreams through quality education
             </p>

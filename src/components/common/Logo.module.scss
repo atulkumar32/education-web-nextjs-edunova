@@ -1,0 +1,94 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  line-height: 1;
+}
+
+.logoPrefix {
+  font-weight: 600;
+  color: $gray-600;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+}
+
+.logoMain {
+  font-weight: 800;
+  @include gradient-text;
+}
+
+// Size variants
+.sm {
+  .logoPrefix {
+    font-size: 8px;
+
+    @include tablet {
+      font-size: 9px;
+    }
+  }
+
+  .logoMain {
+    font-size: $font-size-base;
+
+    @include tablet {
+      font-size: $font-size-lg;
+    }
+  }
+}
+
+.md {
+  .logoPrefix {
+    font-size: 10px;
+    text-transform: capitalize;
+    
+    @include tablet {
+      font-size: 11px;
+      text-transform: capitalize;
+    }
+    
+    @include desktop {
+      font-size: 12px;
+      text-transform: capitalize;
+    }
+  }
+  
+  .logoMain {
+    text-transform: capitalize;
+    font-size: $font-size-xl;
+    
+    @include tablet {
+      text-transform: capitalize;
+      font-size: $font-size-2xl;
+    }
+  }
+}
+
+.lg {
+  .logoPrefix {
+    font-size: 12px;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include desktop {
+      font-size: 16px;
+    }
+  }
+
+  .logoMain {
+    font-size: $font-size-2xl;
+
+    @include tablet {
+      font-size: $font-size-3xl;
+    }
+
+    @include desktop {
+      font-size: $font-size-4xl;
+    }
+  }
+}

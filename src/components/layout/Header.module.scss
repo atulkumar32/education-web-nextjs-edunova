@@ -22,11 +22,9 @@
   padding-bottom: $spacing-lg;
 }
 
-.logo {
-  font-size: $font-size-2xl;
-  font-weight: 800;
-  @include gradient-text;
+.logoLink {
   cursor: pointer;
+  display: block;
 }
 
 .nav {

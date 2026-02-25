@@ -3,60 +3,148 @@
 
 .page {
   min-height: 100vh;
+  width: 100%;
 }
 
 .hero {
   background: $gradient-primary;
   color: $white;
-  padding: $spacing-3xl * 1.5 0;
+  padding: $spacing-2xl 0;
   text-align: center;
+
+  @include tablet {
+    padding: $spacing-3xl 0;
+  }
+
+  @include desktop {
+    padding: $spacing-3xl * 1.5 0;
+  }
 }
 
-.title {
-  font-size: $font-size-5xl;
+.heroTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-md;
   margin-bottom: $spacing-lg;
+  flex-wrap: wrap;
+
+  @include tablet {
+    gap: $spacing-lg;
+  }
+}
+
+.aboutText {
+  font-size: $font-size-2xl;
+  font-weight: 800;
+  color: $white;
+
+  @include tablet {
+    font-size: $font-size-4xl;
+  }
+
+  @include desktop {
+    font-size: $font-size-5xl;
+  }
 }
 
 .subtitle {
-  font-size: $font-size-xl;
+  font-size: $font-size-sm;
   opacity: 0.9;
   max-width: 700px;
   margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @include tablet {
+    font-size: $font-size-lg;
+    padding: 0 $spacing-lg;
+  }
+
+  @include desktop {
+    font-size: $font-size-xl;
+  }
 }
 
 .section {
-  padding: $spacing-3xl 0;
+  padding: $spacing-xl 0;
+
+  @include tablet {
+    padding: $spacing-2xl 0;
+  }
+
+  @include desktop {
+    padding: $spacing-3xl 0;
+  }
 
   h2 {
-    font-size: $font-size-4xl;
+    font-size: $font-size-xl;
     text-align: center;
-    margin-bottom: $spacing-2xl;
+    margin-bottom: $spacing-lg;
+    padding: 0 $spacing-md;
+
+    @include tablet {
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-xl;
+    }
+
+    @include desktop {
+      font-size: $font-size-4xl;
+      margin-bottom: $spacing-2xl;
+    }
   }
 }
 
 .text {
-  font-size: $font-size-lg;
+  font-size: $font-size-sm;
   line-height: 1.8;
   color: $gray-700;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 $spacing-md;
+
+  @include tablet {
+    font-size: $font-size-base;
+    padding: 0 $spacing-lg;
+  }
+
+  @include desktop {
+    font-size: $font-size-lg;
+  }
 }
 
 .statsSection {
-  padding: $spacing-3xl 0;
+  padding: $spacing-xl;
   background: $gray-50;
-  margin: $spacing-3xl 0;
-  border-radius: $radius-2xl;
+  margin: $spacing-xl $spacing-md;
+  border-radius: $radius-lg;
+
+  @include tablet {
+    padding: $spacing-2xl;
+    margin: $spacing-2xl $spacing-lg;
+    border-radius: $radius-xl;
+  }
+
+  @include desktop {
+    padding: $spacing-3xl;
+    margin: $spacing-3xl 0;
+    border-radius: $radius-2xl;
+  }
 }
 
 .statsGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $spacing-xl;
+  gap: $spacing-lg;
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+  }
 
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-xl;
   }
 
   @include desktop {
@@ -66,34 +154,73 @@
 
 .statCard {
   text-align: center;
-  padding: $spacing-2xl;
+  padding: $spacing-md;
+
+  @include tablet {
+    padding: $spacing-lg;
+  }
+
+  @include desktop {
+    padding: $spacing-2xl;
+  }
 }
 
 .statNumber {
-  font-size: $font-size-5xl;
+  font-size: $font-size-3xl;
   font-weight: 800;
   @include gradient-text;
-  margin-bottom: $spacing-md;
+  margin-bottom: $spacing-xs;
+
+  @include tablet {
+    font-size: $font-size-4xl;
+    margin-bottom: $spacing-sm;
+  }
+
+  @include desktop {
+    font-size: $font-size-5xl;
+    margin-bottom: $spacing-md;
+  }
 }
 
 .statLabel {
-  font-size: $font-size-base;
+  font-size: $font-size-xs;
   color: $gray-600;
+
+  @include tablet {
+    font-size: $font-size-sm;
+  }
+
+  @include desktop {
+    font-size: $font-size-base;
+  }
 }
 
 .timeline {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+  padding: 0 $spacing-md;
+
+  @include tablet {
+    padding: 0 $spacing-lg;
+  }
+
+  @include desktop {
+    padding: 0;
+  }
 
   &::before {
     content: '';
     position: absolute;
-    left: 50px;
+    left: 30px;
     top: 0;
     bottom: 0;
     width: 2px;
     background: $gradient-primary;
+
+    @include tablet {
+      left: 50px;
+    }
 
     @include desktop {
       left: 50%;
@@ -103,9 +230,14 @@
 
 .timelineItem {
   display: flex;
-  gap: $spacing-xl;
-  margin-bottom: $spacing-3xl;
+  gap: $spacing-md;
+  margin-bottom: $spacing-2xl;
   position: relative;
+
+  @include tablet {
+    gap: $spacing-xl;
+    margin-bottom: $spacing-3xl;
+  }
 
   @include desktop {
     &:nth-child(even) {
@@ -123,15 +255,22 @@
 .timelineYear {
   position: absolute;
   left: 0;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   @include flex-center;
   background: $gradient-primary;
   color: $white;
   border-radius: $radius-full;
-  font-size: $font-size-xl;
+  font-size: $font-size-base;
   font-weight: 800;
   box-shadow: $shadow-lg;
+  flex-shrink: 0;
+
+  @include tablet {
+    width: 100px;
+    height: 100px;
+    font-size: $font-size-xl;
+  }
 
   @include desktop {
     left: calc(50% - 50px);
@@ -140,11 +279,17 @@
 
 .timelineContent {
   flex: 1;
-  padding: $spacing-xl;
+  padding: $spacing-md;
   background: $white;
-  border-radius: $radius-xl;
+  border-radius: $radius-lg;
   box-shadow: $shadow-md;
-  margin-left: 120px;
+  margin-left: 70px;
+
+  @include tablet {
+    padding: $spacing-xl;
+    border-radius: $radius-xl;
+    margin-left: 120px;
+  }
 
   @include desktop {
     margin-left: 0;
@@ -152,36 +297,74 @@
   }
 
   h3 {
-    font-size: $font-size-xl;
-    margin-bottom: $spacing-sm;
+    font-size: $font-size-base;
+    margin-bottom: $spacing-xs;
+
+    @include tablet {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-sm;
+    }
+
+    @include desktop {
+      font-size: $font-size-xl;
+    }
   }
 
   p {
     color: $gray-600;
+    font-size: $font-size-xs;
+
+    @include tablet {
+      font-size: $font-size-sm;
+    }
+
+    @include desktop {
+      font-size: $font-size-base;
+    }
   }
 }
 
 .featuresGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $spacing-xl;
+  gap: $spacing-md;
+  padding: 0 $spacing-md;
+
+  @include mobile {
+    gap: $spacing-lg;
+  }
 
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-xl;
+    padding: 0 $spacing-lg;
   }
 
   @include desktop {
     grid-template-columns: repeat(4, 1fr);
+    padding: 0;
   }
 }
 
 .featureCard {
   text-align: center;
-  padding: $spacing-2xl;
+  padding: $spacing-lg;
   background: $white;
-  border-radius: $radius-xl;
+  border-radius: $radius-lg;
   box-shadow: $shadow-md;
   transition: all $transition-base;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @include tablet {
+    padding: $spacing-xl;
+    border-radius: $radius-xl;
+  }
+
+  @include desktop {
+    padding: $spacing-2xl;
+  }
 
   &:hover {
     transform: translateY(-4px);
@@ -189,16 +372,40 @@
   }
 
   h3 {
-    font-size: $font-size-lg;
-    margin-bottom: $spacing-sm;
+    font-size: $font-size-base;
+    margin-bottom: $spacing-xs;
+
+    @include tablet {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-sm;
+    }
   }
 
   p {
     color: $gray-600;
+    flex: 1;
+    font-size: $font-size-xs;
+
+    @include tablet {
+      font-size: $font-size-sm;
+    }
+
+    @include desktop {
+      font-size: $font-size-base;
+    }
   }
 }
 
 .featureIcon {
-  font-size: 64px;
-  margin-bottom: $spacing-lg;
+  font-size: 48px;
+  margin-bottom: $spacing-md;
+
+  @include tablet {
+    font-size: 56px;
+    margin-bottom: $spacing-lg;
+  }
+
+  @include desktop {
+    font-size: 64px;
+  }
 }
